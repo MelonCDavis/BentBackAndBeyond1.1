@@ -1,170 +1,771 @@
-import React from "react";
-import planchette from "../assets/planchette1.png";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-const dermShield = [
-  {
-    title: "1-WASH YOUR HANDS!",
-    text: `Wash your hands thoroughly with warm water and a liquid antibacterial soap. 
-    Sing the chorus of “Jolene” twice to meet the CDC’s 20-second rule.`
-  },
-  {
-    title: "2-REMOVE YOUR BANDAGE",
-    text: `Peel horizontally away from the tattoo. The bandage may stretch or tear—this is normal. 
-    Remove in the shower or over a sink due to trapped fluid.`
-  },
-  {
-    title: "3-WASH YOUR TATTOO!",
-    text: `Wash thoroughly with hot water and a liquid antibacterial soap. 
-    Avoid foam soaps—they contain too much alcohol. Wash hands before touching your tattoo.`
-  },
-  {
-    title: "4-DRY YOUR TATTOO!",
-    text: `Blot dry using a fresh paper towel. Do NOT wipe. Do NOT use cloth towels—they harbor bacteria.`
-  },
-  {
-    title: "5-YEP ALCOHOL!",
-    text: `Use the provided alcohol swabs to remove leftover residue. 
-    Do NOT moisturize before applying a new bandage—the skin must be completely dry.`
-  },
-  {
-    title: "6-PREPARE YOUR BANDAGE!",
-    text: `Ensure it covers the entire tattoo with at least a 1/2 inch border. 
-    Peel backing carefully to avoid sticking it to itself.`
-  },
-  {
-    title: "7-PEEL AND REVEAL!",
-    text: `Apply the bandage firmly, then peel off the top plastic layer using the yellow arrows as a guide. 
-    If it leaks, contaminants can enter.`
-  },
-  {
-    title: "8-LEAVE IT ALONE!",
-    text: `Fluid buildup is normal. The tattoo may look messy temporarily. 
-    Aftercare is a marathon — avoid disturbing the bandage.`
-  },
-  {
-    title: "9-REPEAT 1-4!",
-    text: `After 3–5 days, remove the bandage and repeat washing/drying steps. 
-    You’re doing great — healing a tattoo properly is a big accomplishment.`
-  },
-  {
-    title: "10-MOISTURIZE!",
-    text: `Your tattoo may peel again like a sunburn. Use a simple lotion such as Aveeno. 
-    Avoid petroleum products; they clog pores.`
-  },
-  {
-    title: "11-SUNSCREEN!",
-    text: `Your job now is to protect your tattoo. Sun fades ink fast. 
-    Use sunscreen to keep your tattoo vibrant.`
-  }
-];
+    />
+    <title>BENT BACK & BEYOND THE TATTOO EXPERIENCE</title>
+    <link rel="stylesheet" href="/style.css" />
 
-const traditionalCare = [
-  {
-    title: "1-WASH YOUR HANDS!",
-    text: `Wash thoroughly with warm water and antibacterial soap for at least 20 seconds before touching your tattoo.`
-  },
-  {
-    title: "2-REMOVE YOUR BANDAGE!",
-    text: `Remove after 2–4 hours. Do NOT rebandage. Avoid saran wrap and gimmicks—simple is better.`
-  },
-  {
-    title: "3-WASH YOUR TATTOO!",
-    text: `Wash with hot water, mild antibacterial soap, and a bare hand. 
-    Repeat until the tattoo is completely residue-free.`
-  },
-  {
-    title: "4-DRY YOUR TATTOO!",
-    text: `Blot dry with a fresh paper towel. Do NOT wipe. 
-    Redness or tenderness is normal.`
-  },
-  {
-    title: "5-JUST THIS ONCE!",
-    text: `Apply a thin layer of Aquaphor or Hustle Butter one time only. 
-    Blot excess. Too much ointment causes poor healing.`
-  },
-  {
-    title: "6-REPEAT & REPEAT!",
-    text: `Repeat washing and drying (but NOT rebandaging) for 2–3 days. 
-    Switch to unscented lotion once dryness/itching begins.`
-  },
-  {
-    title: "7-LOTION AS NEEDED!",
-    text: `Use a fragrance-free lotion for 2–3 weeks. 
-    Avoid products with alcohol or perfumes.`
-  },
-  {
-    title: "8-SUNSCREEN!",
-    text: `Go outside — just use sunscreen. It protects your tattoo from fading prematurely.`
-  }
-];
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-const Card = ({ title, text }) => (
-  <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3">
-    <div className="card custom-card-border m-2 pb-3 h-100">
-      <div className="card-body d-flex flex-column justify-content-start">
-        <h6 className="d-block mx-auto card-subtitle mb-4 text-muted">
-          <img src={planchette} alt="planchette" />
-        </h6>
+    <link href="/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/fontawesome/css/brands.css" rel="stylesheet" />
 
-        <h6 className="card-title custom-card-border text-center text-white bg-dark p-2">
-          {title}
-        </h6>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
-        <p className="card-text text-center p-2">{text}</p>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      .hidden {
+        display: none;
+      }
+      .custom-card-border {
+        border: 8px solid rgb(254, 233, 187); /* Adjust thickness and color as needed */
+      }
+      .custom-button-border {
+        border: 4px solid rgb(254, 233, 187);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container-fluid bg-secondary">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <a href="#home" class="navbar-brand">
+            <h1
+              class="arial my-text-shadow custom-card-border px-3 bg-light rounded"
+            >
+              Bent Back & Beyond
+            </h1></a
+          >
+          <span class="hidden">Bent Back and Beyond Tattoo</span>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-label="toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul class="navbar-nav ms-auto text-center">
+              <li>
+                <a
+                  href="/home.html"
+                  class="btn btn-light me-2 btn-sm custom-button-border mb-2"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/tattoos.html"
+                  class="btn btn-light me-2 btn-sm custom-button-border mb-2"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Tattoos</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/appointments.html"
+                  class="btn btn-light me-2 btn-sm custom-button-border mb-2"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Appointments</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/store"
+                  class="btn btn-light me-2 btn-sm custom-button-border mb-2"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Store</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="btn btn-light me-2 btn-sm custom-button-border mb-2"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </div>
-  </div>
-);
-
-const Aftercare = () => {
-  return (
+    </header>
     <main>
-      {/* TOP HEADER */}
-      <div className="bg-secondary pb-2">
-        <h1 className="display-1 custom-card-border text-center mb-4 bg-dark text-white">
+      <div class="bg-secondary pb-2">
+        <h1
+          class="display-1 custom-card-border text-center mb-4 bg-dark text-white"
+        >
           TATTOO AFTERCARE
         </h1>
-
-        <div className="px-4 py-5 text-center">
-          <h2 className="display-5 p-3 my-text-shadow custom-card-border rounded fw-bold mb-5 bg-light">
-            Your new tattoo isn’t just a piece of art. I did the tattoo to the
-            best of my ability, but now it’s up to you to take care of it.
-            Here’s how.
+        <div class="px-4 py-5 text-center">
+          <h2
+            class="display-5 p-3 custom-card-border rounded fw-bold mb-5 bg-light"
+          >
+            Your new tattoo isn't just a piece of art. I did the tattoo to the
+            best of my ability, but now it's up to you to take care of it. Here
+            is how to do just that.
           </h2>
         </div>
       </div>
-
-      {/* --------------------  DERM SHIELD SECTION  -------------------- */}
-      <div className="bg-secondary pb-5">
-        <h3 className="display-1 custom-card-border text-center mb-4 bg-dark text-white">
+      <div class="bg-secondary pb-5">
+        <h3
+          class="display-1 custom-card-border text-center mb-4 bg-dark text-white"
+        >
           Derm Shield / Saniderm
         </h3>
+        <div class="container">
+          <div class="row pt-5">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  1-WASH YOUR HANDS!
+                </h6>
 
-        <div className="container">
-          <div className="row pt-5">
-            {dermShield.map((step, i) => (
-              <Card key={i} title={step.title} text={step.text} />
-            ))}
+                <p class="card-text text-center p-2">
+                  Wash your hands thoroughly with warm water and a liquid
+                  antibacterial soap. You need to sing the chorus of the song
+                  "Jolene" by Dolly Parton roughly twice to meet the CDC's
+                  recommended 20-second handwashing time.
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  2-REMOVE YOUR BANDAGE
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Peel horizontially away from the tattoo. As it stretches the
+                  bandage may tear. That's ok. The bandage stretches and the
+                  adhesive lets go. Do this in the shower or over a sink due to
+                  the fluid that can build up underneath. It can be messy.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  3-WASH YOUR TATTOO!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Thoroughly wash your tattoo with hot water and a liquid
+                  antibacterial soap. You can use Dial Gold, but please avoid
+                  the foam soaps as they have a lot of alcohol in them. Always
+                  wash your hands before touching your tattoo until it is fully
+                  healed.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  4-DRY YOUR TATTOO!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Use a fresh square of paper towel to blot the tattoo dry.
+                  Wiping hurts. Don't do it! Please don't just use a hand towel.
+                  Used once, a handtowel has enough bacteria to cause an
+                  infection in an open wound. Just use the paper towel.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  5-YEP ALCOHOL!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  I provide alcohol swabs so you can remove any leftover bad
+                  guys and residiual soap. This ensures the bandage's success.
+                  Do not moisturize the tattoo at this point. The tattoo needs
+                  to be dry for the bandage to work properly.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  6-PREPARE YOUR BANDAGE!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Make sure the bandage will cover the entire tattoo with at
+                  LEAST 1/2 inch border around the edges. Peel the white backing
+                  off the bandage being careful to not let it adhere to itself.
+                  If it does, you can either do traditional aftercare, or use an
+                  alternative derm.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  7-PEEL AND REVEAL!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Place the bandage carefully down and press it firmly down
+                  working to ensure adhesion. Use the yellow arrows on the top
+                  of the bandage as a guide to remove the top plastic. Remember
+                  if it leaks that mean things can get out AND in.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  8-LEAVE IT ALONE!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Your tattoo is going to look worse before it looks better.
+                  it's likely that fluids will build up in the bandage. That's
+                  normal and totally expected. Remember that aftercare is not a
+                  sprint but a marathon. Your goal is to finish without
+                  scabbing!
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  9-REPEAT 1-4!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  In 3-5 days remove the second bandage and repeat steps 1-4. I
+                  know you get it. You're an old pro. Healed tattoos a million
+                  times. I'm glad you did this one different. I'm proud of you.
+                  Different can be weird. Weird can be good!
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  10-MOISTURIZE!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Your tattoo will likely peel like a sunburn at least one more
+                  time before all is said and done. A simple lotion such as
+                  Aveeno works well to help keep you moisturized. Avoid
+                  petroleum based products as they can clog your pores and lead
+                  to a bad time.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  11-SUNSCREEN!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  So it's your tattoo but remember it's up to you now to keep it
+                  looking as good as possible. The sun is not your tattoo's
+                  friend. It's job is to fade your tattoo's vibrant colors and
+                  make it look old and dingy. Use some sunscreen. Your welcome!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* --------------------  TRADITIONAL AFTERCARE SECTION  -------------------- */}
-      <div className="bg-secondary pb-5 pt-5">
-        <h3 className="display-1 custom-card-border text-center mb-4 bg-dark text-white">
-          Traditional Aftercare
+      <div class="bg-secondary pb-5 pt-5">
+        <h3
+          class="display-1 custom-card-border text-center mb-4 bg-dark text-white"
+        >
+          TRADITIONAL AFTERCARE
         </h3>
+        <div class="container">
+          <div class="row pt-5">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  1-WASH YOUR HANDS!
+                </h6>
 
-        <div className="container">
-          <div className="row pt-5">
-            {traditionalCare.map((step, i) => (
-              <Card key={i} title={step.title} text={step.text} />
-            ))}
+                <p class="card-text text-center p-2">
+                  Wash your hands thoroughly with warm water and liquid
+                  anti-bacterial soap. 20 seconds is recommended by the CDC.
+                  Always wash your hands before touching your tattoo until it is
+                  fully healed.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  2-REMOVE YOUR BANDAGE!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Remove the bandage after 2-4 hours. Do NOT re-bandage your
+                  tattoo. You've probably heard a million different things from
+                  saran wrap to thera-bands. Use the K.I.S.S method. Less really
+                  is more.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  3-WASH YOUR TATTOO!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Wash your tattoo with hot running water, a mild liquid
+                  anti-bacterial soap and a bare hand. Repeat the washing
+                  process until the tattoo is free from residue. This may take
+                  several rinse and repeats.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  4-DRY YOUR TATTOO!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Using a fresh square of papertowel, blot your tattoo dry. Do
+                  not wipe it. It is both painful and causes undue irritation.
+                  Repeat the previous step if there is still residue at this
+                  point.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  5-JUST THIS ONCE!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Apply a small amount of Aquaphor Healing Ointment or Hustle
+                  Butter to the tattoo until absorbed. Blot any excess off with
+                  a fresh paper towel. Excessive amounts of ointment can result
+                  in a bad heal.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  6-REPEAT & REPEAT!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Repeat the previous steps *excluding step 2* for 2-3 days.
+                  When the tattoo begins to show signs of dryness and itching
+                  switch to an unscented lotion like Aveeno. STOP USING THE
+                  AQUAPHOR!
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  7-LOTION AS NEEDED!
+                </h6>
+
+                <p class="card-text text-center p-2">
+                  Repeat the lotion regime for the next two to three weeks or
+                  until your tattoo is fully healed. You really can use just
+                  about any lotion you want, just avoid fragrances and lotions
+                  with alcohol. Read the ingredients!
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+              <div class="card custom-card-border m-2 pb-5">
+                <div class="card-body"></div>
+                <h6
+                  class="d-block item-center mx-auto card-subtitle mb-4 text-muted"
+                >
+                  <img
+                    src="/resources/images/planchette1.png"
+                    alt="ouija planchette"
+                  />
+                </h6>
+                <h6
+                  class="card-title custom-card-border text-center text-white bg-dark"
+                >
+                  8-SUNSCREEN!
+                </h6>
+                <p class="card-text text-center p-2">
+                  So it's your tattoo now but remember it's up to you now to
+                  keep it looking as good as possible. The sun is not your
+                  tattoo's friend. Go outside! Just use some sunscreen. Your
+                  welcome!
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
-  );
-};
+    <footer class="bg-dark text-light pt-5">
+      <div class="container px-5">
+        <div class="row">
+          <div class="col-6 col-lg-4">
+            <h3 class="fw-bold" id="contact">Bent Back & Beyond</h3>
+            <p class="pt-2">
+              Melon Chris Davis <br />Zen Ink Asheville
+              <br />
+              520 Hendersonville Rd.
+              <br />
+              Asheville, NC 28803
+            </p>
+            <p class="mb-4">1-720-666-0611</p>
+            <p>brothertiki@gmail.com</p>
+          </div>
+          <div class="col">
+            <h4 class="fw-bold text-lg-center">Menu</h4>
+            <ul class="list-unstyled pt-2">
+              <li class="py-1 text-lg-center">
+                <a
+                  href="/home.html"
+                  class="btn btn-light me-2 btn-sm custom-button-border"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Home</a
+                >
+              </li>
+              <li class="py-1 text-lg-center">
+                <a
+                  href="tattoos.html"
+                  class="btn btn-light me-2 btn-sm custom-button-border"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Tattoos</a
+                >
+              </li>
+              <li class="py-1 text-lg-center">
+                <a
+                  href="/appointments.html"
+                  class="btn btn-light me-2 btn-sm custom-button-border"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Appointments</a
+                >
+              </li>
+              <li class="py-1 text-lg-center">
+                <a
+                  href="/store.html"
+                  class="btn btn-light me-2 btn-sm custom-button-border"
+                  tabindex="-1"
+                  role="button"
+                  aria-disabled="true"
+                  >Store</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4 class="fw-bold">Social Media Links</h4>
+            <div class="social-media pt-2">
+              <a
+                href="https://www.facebook.com/brothertiki"
+                class="text-light fs-2 me-3"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.github.com/MelonCDavis"
+                class="text-light fs-2 me-3"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/bentbackandbeyond/"
+                class="text-light fs-2 me-3"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/chrismelondavis"
+                class="text-light fs-2"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center py-1">
+          <p>2025 © BentBack&Beyond. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
 
-export default Aftercare;
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
