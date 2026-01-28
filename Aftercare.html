@@ -1,0 +1,170 @@
+import React from "react";
+import planchette from "../assets/planchette1.png";
+
+const dermShield = [
+  {
+    title: "1-WASH YOUR HANDS!",
+    text: `Wash your hands thoroughly with warm water and a liquid antibacterial soap. 
+    Sing the chorus of “Jolene” twice to meet the CDC’s 20-second rule.`
+  },
+  {
+    title: "2-REMOVE YOUR BANDAGE",
+    text: `Peel horizontally away from the tattoo. The bandage may stretch or tear—this is normal. 
+    Remove in the shower or over a sink due to trapped fluid.`
+  },
+  {
+    title: "3-WASH YOUR TATTOO!",
+    text: `Wash thoroughly with hot water and a liquid antibacterial soap. 
+    Avoid foam soaps—they contain too much alcohol. Wash hands before touching your tattoo.`
+  },
+  {
+    title: "4-DRY YOUR TATTOO!",
+    text: `Blot dry using a fresh paper towel. Do NOT wipe. Do NOT use cloth towels—they harbor bacteria.`
+  },
+  {
+    title: "5-YEP ALCOHOL!",
+    text: `Use the provided alcohol swabs to remove leftover residue. 
+    Do NOT moisturize before applying a new bandage—the skin must be completely dry.`
+  },
+  {
+    title: "6-PREPARE YOUR BANDAGE!",
+    text: `Ensure it covers the entire tattoo with at least a 1/2 inch border. 
+    Peel backing carefully to avoid sticking it to itself.`
+  },
+  {
+    title: "7-PEEL AND REVEAL!",
+    text: `Apply the bandage firmly, then peel off the top plastic layer using the yellow arrows as a guide. 
+    If it leaks, contaminants can enter.`
+  },
+  {
+    title: "8-LEAVE IT ALONE!",
+    text: `Fluid buildup is normal. The tattoo may look messy temporarily. 
+    Aftercare is a marathon — avoid disturbing the bandage.`
+  },
+  {
+    title: "9-REPEAT 1-4!",
+    text: `After 3–5 days, remove the bandage and repeat washing/drying steps. 
+    You’re doing great — healing a tattoo properly is a big accomplishment.`
+  },
+  {
+    title: "10-MOISTURIZE!",
+    text: `Your tattoo may peel again like a sunburn. Use a simple lotion such as Aveeno. 
+    Avoid petroleum products; they clog pores.`
+  },
+  {
+    title: "11-SUNSCREEN!",
+    text: `Your job now is to protect your tattoo. Sun fades ink fast. 
+    Use sunscreen to keep your tattoo vibrant.`
+  }
+];
+
+const traditionalCare = [
+  {
+    title: "1-WASH YOUR HANDS!",
+    text: `Wash thoroughly with warm water and antibacterial soap for at least 20 seconds before touching your tattoo.`
+  },
+  {
+    title: "2-REMOVE YOUR BANDAGE!",
+    text: `Remove after 2–4 hours. Do NOT rebandage. Avoid saran wrap and gimmicks—simple is better.`
+  },
+  {
+    title: "3-WASH YOUR TATTOO!",
+    text: `Wash with hot water, mild antibacterial soap, and a bare hand. 
+    Repeat until the tattoo is completely residue-free.`
+  },
+  {
+    title: "4-DRY YOUR TATTOO!",
+    text: `Blot dry with a fresh paper towel. Do NOT wipe. 
+    Redness or tenderness is normal.`
+  },
+  {
+    title: "5-JUST THIS ONCE!",
+    text: `Apply a thin layer of Aquaphor or Hustle Butter one time only. 
+    Blot excess. Too much ointment causes poor healing.`
+  },
+  {
+    title: "6-REPEAT & REPEAT!",
+    text: `Repeat washing and drying (but NOT rebandaging) for 2–3 days. 
+    Switch to unscented lotion once dryness/itching begins.`
+  },
+  {
+    title: "7-LOTION AS NEEDED!",
+    text: `Use a fragrance-free lotion for 2–3 weeks. 
+    Avoid products with alcohol or perfumes.`
+  },
+  {
+    title: "8-SUNSCREEN!",
+    text: `Go outside — just use sunscreen. It protects your tattoo from fading prematurely.`
+  }
+];
+
+const Card = ({ title, text }) => (
+  <div className="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+    <div className="card custom-card-border m-2 pb-3 h-100">
+      <div className="card-body d-flex flex-column justify-content-start">
+        <h6 className="d-block mx-auto card-subtitle mb-4 text-muted">
+          <img src={planchette} alt="planchette" />
+        </h6>
+
+        <h6 className="card-title custom-card-border text-center text-white bg-dark p-2">
+          {title}
+        </h6>
+
+        <p className="card-text text-center p-2">{text}</p>
+      </div>
+    </div>
+  </div>
+);
+
+const Aftercare = () => {
+  return (
+    <main>
+      {/* TOP HEADER */}
+      <div className="bg-secondary pb-2">
+        <h1 className="display-1 custom-card-border text-center mb-4 bg-dark text-white">
+          TATTOO AFTERCARE
+        </h1>
+
+        <div className="px-4 py-5 text-center">
+          <h2 className="display-5 p-3 my-text-shadow custom-card-border rounded fw-bold mb-5 bg-light">
+            Your new tattoo isn’t just a piece of art. I did the tattoo to the
+            best of my ability, but now it’s up to you to take care of it.
+            Here’s how.
+          </h2>
+        </div>
+      </div>
+
+      {/* --------------------  DERM SHIELD SECTION  -------------------- */}
+      <div className="bg-secondary pb-5">
+        <h3 className="display-1 custom-card-border text-center mb-4 bg-dark text-white">
+          Derm Shield / Saniderm
+        </h3>
+
+        <div className="container">
+          <div className="row pt-5">
+            {dermShield.map((step, i) => (
+              <Card key={i} title={step.title} text={step.text} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* --------------------  TRADITIONAL AFTERCARE SECTION  -------------------- */}
+      <div className="bg-secondary pb-5 pt-5">
+        <h3 className="display-1 custom-card-border text-center mb-4 bg-dark text-white">
+          Traditional Aftercare
+        </h3>
+
+        <div className="container">
+          <div className="row pt-5">
+            {traditionalCare.map((step, i) => (
+              <Card key={i} title={step.title} text={step.text} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default Aftercare;
